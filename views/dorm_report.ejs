@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dorm-report-tempate</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Prompt&family=Sarabun&display=swap');
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        * {
+            font-family: 'Sarabun', sans-serif;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+        .grid-item {
+            font-size: small; 
+            text-align: center;
+        }
+        .grid2 {
+            display: grid;
+            grid-template-columns: auto auto;
+            margin-left: 80px;
+        }
+        .grid-item2 {
+            font-size: small; 
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div style="visibility: hidden;" id="load"> 
+    
+    <img src="/assets/images/logo.jpg" style="display: block;margin-top: 30px; margin-left: auto;margin-right: auto; width: 7%;">
+
+    <p align="center" style="font-size: medium;">
+        <span>เเบบฟอร์มการขออนุญาตออกหอพักนักเรียน</span> <br> 
+        <span>งานสวัสดิการนักเรียน นักศึกษา ผ่ายพัฒนากิจการนักเรียน นักศึกษา</span> <br> 
+        <span>วิทยาลัยอาชีวศึกษาเทคโนโลยีฐานวิทยาศาสตร์ (ชลบุรี)</span>
+
+    <p style="font-size: small; margin-left: 50px;">เรียน หัวหน้างานสวัสดิการนักเรียน นักศึกษา</p>
+
+    <p style="font-size: small;">
+        <span style="margin-left: 100px;">ด้วยข้าพเจ้า <span id="prefix_men">นาย</span>/<span id="prefix_women">นางสาว</span> <span id="student_name">......................................................................</span> ระดับชั้น <span id="grade">....................................................</span></span> <br>
+        <span style="margin-left: 50px;">สาขางาน <span id="reg_type">.................................</span> หอที่ <span id="dorm_number">....................</span> เลขที่ห้อง <span id="room_number">........................</span> เบอร์โทรศัพท์(นักเรียน) <span id="student_phone_number">..................................</span> เบอร์โทรศัพท์</span> <br>
+        <span style="margin-left: 50px;">(ผู้ปกครอง) <span id="parent_phone_number">..................................</span> ขออนุญาตออกจากหอพักเพื่อ <span id="leave_for">....................................................................</span> ด้วยเหตุนี้จึงขออนุญาต</span> <br>
+        <span style="margin-left: 50px;">ออกจากหอพักในวันที่ <span id="leave_date">...............................</span> เวลา <span id="leave_time">...........................</span> น. ถึงวันที่ <span id="come_date">................................</span> เวลา <span id="come_time">.........................</span> น. เดินทางโดย</span> <br>
+        <span style="margin-left: 50px;"><input type="checkbox" id="check_self"> ด้วยตัวเอง <input type="checkbox" id="check_parent"> ผู้ปกครองมารับ &nbsp; ชื่อ <span id="parent_name">........................................................</span> เบอร์โทรศัพท์ผู้ปกครอง <span id="parent_phone_number2">........................................................</span></span> <br>
+        <span style="margin-left: 50px;">เเละกลับเข้าหอพักในวันที่ <span id="come_date2">.......................................................</span> เวลา <span id="come_time2">.............................</span> น. รวมเป็นเวลา <span id="total_leave_date">.............................</span> วัน</span> <br>
+    </p>
+
+    <p style="font-size: small;">
+        <span style="margin-left: 100px;">ข้าพเจ้าฯ จะปฏิบัติตามกฎระเบียบของหอพักฯ เเละเดินทางกลับเข้าหอพักฯ ตรงตามเวลาที่ระบุไว้ข้างต้นเเละหากข้าพเจ้ามี</span>
+        <span style="margin-left: 50px;">เหตุขัดข้องประการใดซึ่งทำให้การเดินทางกลับล่าช้ากว่ากำหนด ข้าพเจ้าจะโทรศัพท์เเจ้งหัวหน้างานสวัสดิการเเละครูเเม่บ้านหอพักทราบ</span>
+    </p>    
+
+    <br>
+
+    <p style="font-size: small;">
+        <span style="margin-left: 100px;">จึงเรียนมาเพื่อทราบเเละพิจารณาอนุญาต</span>
+    </p>
+
+    <br>
+
+    <div class="grid">
+        <p class="grid-item">
+            <span>ลงชื่อ ............................. นักเรียน</span><br>
+            <span>(<span id="student_name2">.....................................................</span>)</span>
+        </p>
+        <p class="grid-item">
+            <span>ลงชื่อ ............................. ผู้ปกครอง</span><br>
+            <span>(<span id="parent_name2">.....................................................</span>)</span>
+        </p>
+    </div>
+
+    <div class="grid2">
+        <p class="grid-item2">
+            <span><strong>ความคิดเห็นของครูที่ปรึกษา</strong></span> <br>
+            <span>.............................................................................</span> <br>
+            <span>.............................................................................</span> <br>
+            <br>
+            <span>ลงชื่อ ............................................... </span> <br>
+            <span style="margin-left: 30px;">(..............................................)</span>
+        </p>
+        <p class="grid-item2">
+            <span><strong>ความคิดเห็นของครูเเม่บ้าน</strong></span> <br>
+            <span>....................................................................</span> <br>
+            <span>....................................................................</span> <br>
+            <br>
+            <span>ลงชื่อ ............................................... </span> <br>
+            <span style="margin-left: 30px;">(นางสาวเสาวภา นิลละออง)</span>
+        </p>
+    </div>
+
+    <br>
+
+    <p align="center" >
+        <span style="font-size: medium;">ความเห็นของหัวหน้างานสวัสดิการนักเรียน นักศึกษา</span> <br>
+        <span style="font-size: small;"><input type="checkbox" id="check_allow"> อนุญาต &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" id="check_notallow"> ไม่อนุญาตเพราะ ..................................</span>
+    </p>
+
+    <br>
+
+    <p align="center">
+        <span style="font-size: small;">ลงชื่อ ..................................</span> <br>
+        <span style="font-size: small;">(นางชาลิณี ตางาม)</span> <br>
+        <span style="font-size: small;"><strong>หัวหน้างานสวัสดิการนักเรียน นักศึกษา</strong></span>
+    </p>
+
+    <p style="font-size: small;">
+        <span style="margin-left: 50px; text-decoration: underline;"><strong>หมายเหตุ</strong></span>
+        <span>นักเรียนต้องดำเนินเอกสารก่อนออกจากหอพักล่วงหน้า 1 วันเท่านั้น</span>
+    </p>
+
+    <p align="center">........................................................................................................................................................................</p>
+
+    <p align="center" style="font-size: small;"><strong>เซ็นกลับเข้าหอพัก</strong></p>
+
+    <p style="font-size: small;">
+        <span style="margin-left: 50px;">ชื่อ(นักเรียน)<span id="student_name3">................................................................</span> วันที่............................... เวลา................. ลายเซ็น............................................</span> <br>
+    </p>
+    <p style="font-size: small">
+        <span style="margin-left: 50px;">ชื่อ(ผู้ปกครอง)<span id="parent_name3">................................................................</span> เบอร์โทรศัพท์<span id="parent_phone_number3">.......................................</span> ลายเซ็น............................................</span>
+    </p>
+
+    </div>
+
+
+
+
+    <script src="../js/preload.js"></script>
+    <script src="../js/insert.js"></script>
+    <% const {
+        prefix,
+        student_name,
+        student_lastname,
+        dorm_number,
+        room_number,
+        student_phone_number,
+        reg_type,
+        leave_date,
+        leave_time,
+        leave_for,
+        come_date,
+        come_time,
+        total_leave_date,
+        traveled_by,
+        parent_name,
+        parent_lastname,
+        parent_phone_number,
+        student_id,
+        back_in,
+        allow,
+        grade,
+    } = data; %>
+
+    <script>
+        // Element
+        const prefix_men = document.getElementById("prefix_men");
+        const prefix_women = document.getElementById("prefix_women");
+        const student_name = document.getElementById("student_name");
+        const grade = document.getElementById("grade");
+        const reg_type = document.getElementById("reg_type");
+        const dorm_number = document.getElementById("dorm_number");
+        const room_number = document.getElementById("room_number");
+        const student_phone_number = document.getElementById("student_phone_number");
+        const parent_phone_number = document.getElementById("parent_phone_number");
+        const leave_for = document.getElementById("leave_for");
+        const leave_date = document.getElementById("leave_date");
+        const leave_time = document.getElementById("leave_time");
+        const come_date = document.getElementById("come_date");
+        const come_time = document.getElementById("come_time");
+        const check_self = document.getElementById("check_self");
+        const check_parent = document.getElementById("check_parent");
+        const parent_name = document.getElementById("parent_name");
+        const parent_phone_number2 = document.getElementById("parent_phone_number2");
+        const come_date2 = document.getElementById("come_date2");
+        const come_time2 = document.getElementById("come_time2");
+        const total_leave_date = document.getElementById("total_leave_date");
+        
+        const student_name2 = document.getElementById("student_name2");
+        const parent_name2 = document.getElementById("parent_name2");
+
+        const check_allow = document.getElementById("check_allow");
+        const check_notallow = document.getElementById("check_notallow");
+
+        const student_name3 = document.getElementById("student_name3");
+        const parent_name3 = document.getElementById("parent_name3");
+        const parent_phone_number3 = document.getElementById("parent_phone_number3");
+        /*  another config */
+        // prefix
+        let prefixData = "<%= prefix %>";
+        if(prefixData == "นาย"){
+            prefix_women.style.textDecorationLine = "line-through";
+            console.log("Line Through : Women");
+        } else if(prefixData == "นางสาว"){
+            prefix_men.style.textDecorationLine = "line-through";
+            console.log("Line Through : Men");
+        } else {
+            prefix_women.style.textDecorationLine = "line-through";
+            prefix_men.style.textDecorationLine = "line-through";
+            console.log("Line Through : All");
+        }
+        // Travel by Check
+        let travelByData = "<%= traveled_by %>";
+        if(travelByData == "ผู้ปกครองมารับ"){
+            check_parent.checked = true;
+            console.log("Checked : Parent");
+        } else {
+            check_self.checked = true;
+            console.log("Checked : Self");
+        }
+        /*  another config */
+
+
+        // Insert Data
+        const dataArray = [
+            {
+                // student_name
+                data: "<%= student_name %> <%= student_lastname %>",
+                space: String(student_name.innerHTML),
+                element: student_name,
+            },
+            {
+                // grade
+                data: "<%= grade %>",
+                space: String(grade.innerHTML),
+                element: grade,
+            },
+            {
+                // reg_type
+                data: "<%= reg_type %>",
+                space: String(reg_type.innerHTML),
+                element: reg_type,
+            },
+            {
+                // dorm_number
+                data: "<%= dorm_number %>",
+                space: String(dorm_number.innerHTML),
+                element: dorm_number,
+            },
+            {
+                // room_number
+                data: "<%= room_number %>",
+                space: String(room_number.innerHTML),
+                element: room_number,
+            },
+            {
+                // student_phone_number
+                data: "<%= student_phone_number %>",
+                space: String(student_phone_number.innerHTML),
+                element: student_phone_number,
+            },
+            {
+                // parent_phone_number
+                data: "<%= parent_phone_number %>",
+                space: String(parent_phone_number.innerHTML),
+                element: parent_phone_number,
+            },
+            {
+                // leave_for
+                data: "<%= leave_for %>",
+                space: String(leave_for.innerHTML),
+                element: leave_for,
+            },
+            {
+                // leave_date
+                data: "<%= leave_date %>",
+                space: String(leave_date.innerHTML),
+                element: leave_date,
+            },
+            {
+                // leave_time
+                data: "<%= leave_time %>",
+                space: String(leave_time.innerHTML),
+                element: leave_time,
+            },
+            {
+                // come_date
+                data: "<%= come_date %>",
+                space: String(come_date.innerHTML),
+                element: come_date,
+            },
+            {
+                // come_time
+                data: "<%= come_time %>",
+                space: String(come_time.innerHTML),
+                element: come_time,
+            },
+            {
+                // parent_name
+                data: "<%= parent_name %> <%= parent_lastname %>",
+                space: String(parent_name.innerHTML),
+                element: parent_name,
+            },
+            {
+                // parent_phone_number2
+                data: "<%= parent_phone_number %>",
+                space: String(parent_phone_number2.innerHTML),
+                element: parent_phone_number2,
+            },
+            {
+                // come_date2
+                data: "<%= come_date %>",
+                space: String(come_date2.innerHTML),
+                element: come_date2,
+            },
+            {
+                // come_time2
+                data: "<%= come_time %>",
+                space: String(come_time2.innerHTML),
+                element: come_time2,
+            },
+            {
+                // total_leave_date
+                data: "<%= total_leave_date %>",
+                space: String(total_leave_date.innerHTML),
+                element: total_leave_date,
+            },
+
+            {
+                // total_leave_date
+                data: "<%= prefix %> <%= student_name %> <%= student_lastname %>",
+                space: "",
+                element: student_name2,
+            },
+            {
+                // total_leave_date
+                data: "<%= parent_name %> <%= parent_lastname %>",
+                space: "",
+                element: parent_name2,
+            },
+        ];
+
+        dataArray.forEach((data) =>{
+            insertData({
+                data: data.data, 
+                space: data.space, 
+                element: data.element,
+            });
+            console.log("Inserted : " + data.data);
+        });
+
+
+        // Allow check
+        let allowData = "<%= allow %>";
+        if(allowData == "true"){
+            check_allow.checked = true;
+            console.log("Check allow : Allowed");
+        }
+        else {
+            console.log("Check allow : Not Allow");
+        }
+
+        // back in
+        let backInData = "<%= back_in %>";
+        if(backInData == "true"){
+            let backInDataArray = [
+                {
+                    data: "<%= prefix %> <%= student_name %> <%= student_lastname %>",
+                    space: String(student_name3.innerHTML),
+                    element: student_name3,
+                },
+                {
+                    data: "<%= parent_name %> <%= parent_lastname %>",
+                    space: String(parent_name3.innerHTML),
+                    element: parent_name3,
+                },
+                {
+                    data: "<%= parent_phone_number %>",
+                    space: String(parent_phone_number3.innerHTML),
+                    element: parent_phone_number3,
+                },
+            ];
+
+            backInDataArray.forEach((data) =>{
+                insertData({
+                    data: data.data, 
+                    space: data.space, 
+                    element: data.element,
+                });
+                console.log("Insert Back In Data : " + data.data);
+            });
+        }
+
+    </script>
+
+    
+</body>
+</html>

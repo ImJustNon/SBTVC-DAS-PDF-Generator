@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dorm-report-tempate</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Prompt&family=Sarabun&display=swap');
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        * {
+            font-family: 'Sarabun', sans-serif;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+        .grid-item {
+            font-size: small; 
+            text-align: center;
+        }
+        .grid2 {
+            display: grid;
+            grid-template-columns: auto auto;
+            margin-left: 80px;
+        }
+        .grid-item2 {
+            font-size: small; 
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div style="visibility: hidden;" id="load"> 
+    
+    <img src="/public/assets/images/logo.jpg" style="display: block;margin-top: 30px; margin-left: auto;margin-right: auto; width: 7%;">
+
+    <p align="center" style="font-size: medium;">
+        <span>เเบบฟอร์มการขออนุญาตออกหอพักนักเรียน</span> <br> 
+        <span>งานสวัสดิการนักเรียน นักศึกษา ผ่ายพัฒนากิจการนักเรียน นักศึกษา</span> <br> 
+        <span>วิทยาลัยอาชีวศึกษาเทคโนโลยีฐานวิทยาศาสตร์ (ชลบุรี)</span>
+
+    <p style="font-size: small; margin-left: 50px;">เรียน หัวหน้างานสวัสดิการนักเรียน นักศึกษา</p>
+
+    <p style="font-size: small;">
+        <span style="margin-left: 100px;">ด้วยข้าพเจ้า นาย/นางสาว ...................................................................... ระดับชั้น ....................................................</span> <br>
+        <span style="margin-left: 50px;">สาขางาน ................................. หอที่ .................... เลขที่ห้อง ........................ เบอร์โทรศัพท์(นักเรียน) .................................. เบอร์โทรศัพท์</span>
+        <span style="margin-left: 50px;">(ผู้ปกครอง) .................................. ขออนุญาตออกจากหอพักเพื่อ .................................................................... ด้วยเหตุนี้จึงขออนุญาต</span>
+        <span style="margin-left: 50px;">ออกจากหอพักในวันที่ ............................... เวลา ........................... น. ถึงวันที่ ................................ เวลา ......................... น. เดินทางโดย</span>
+        <span style="margin-left: 50px;"><input type="checkbox" id="check_self"> ด้วยตัวเอง <input type="checkbox" id="check_parent"> ผู้ปกครองมารับ &nbsp; ชื่อ ........................................................ เบอร์โทรศัพท์ผู้ปกครอง ........................................................</span>
+        <span style="margin-left: 50px;">เเละกลับเข้าหอพักในวันที่ ....................................................... เวลา ............................. น. รวมเป็นเวลา ............................. วัน</span>
+    </p>
+
+    <p style="font-size: small;">
+        <span style="margin-left: 100px;">ข้าพเจ้าฯ จะปฏิบัติตามกฎระเบียบของหอพักฯ เเละเดินทางกลับเข้าหอพักฯ ตรงตามเวลาที่ระบุไว้ข้างต้นเเละหากข้าพเจ้ามี</span>
+        <span style="margin-left: 50px;">เหตุขัดข้องประการใดซึ่งทำให้การเดินทางกลับล่าช้ากว่ากำหนด ข้าพเจ้าจะโทรศัพท์เเจ้งหัวหน้างานสวัสดิการเเละครูเเม่บ้านหอพักทราบ</span>
+    </p>    
+
+    <br>
+
+    <p style="font-size: small;">
+        <span style="margin-left: 100px;">จึงเรียนมาเพื่อทราบเเละพิจารณาอนุญาต</span>
+    </p>
+
+    <br>
+
+    <div class="grid">
+        <p class="grid-item">
+            <span>ลงชื่อ ............................. นักเรียน</span><br>
+            <span>(.....................................................)</span>
+        </p>
+        <p class="grid-item">
+            <span>ลงชื่อ ............................. ผู้ปกครอง</span><br>
+            <span>(.....................................................)</span>
+        </p>
+    </div>
+
+    <div class="grid2">
+        <p class="grid-item2">
+            <span><strong>ความคิดเห็นของครูที่ปรึกษา</strong></span> <br>
+            <span>.............................................................................</span> <br>
+            <span>.............................................................................</span> <br>
+            <br>
+            <span>ลงชื่อ ............................................... </span> <br>
+            <span style="margin-left: 30px;">(..............................................)</span>
+        </p>
+        <p class="grid-item2">
+            <span><strong>ความคิดเห็นของครูเเม่บ้าน</strong></span> <br>
+            <span>....................................................................</span> <br>
+            <span>....................................................................</span> <br>
+            <br>
+            <span>ลงชื่อ ............................................... </span> <br>
+            <span style="margin-left: 30px;">(นางสาวเสาวภา นิลละออง)</span>
+        </p>
+    </div>
+
+    <br>
+
+    <p align="center" >
+        <span style="font-size: medium;">ความเห็นของหัวหน้างานสวัสดิการนักเรียน นักศึกษา</span> <br>
+        <span style="font-size: small;"><input type="checkbox"> อนุญาต &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox"> ไม่อนุญาตเพราะ ..................................</span>
+    </p>
+
+    <br>
+
+    <p align="center">
+        <span style="font-size: small;">ลงชื่อ ..................................</span> <br>
+        <span style="font-size: small;">(นางชาลิณี ตางาม)</span> <br>
+        <span style="font-size: small;"><strong>หัวหน้างานสวัสดิการนักเรียน นักศึกษา</strong></span>
+    </p>
+
+    <p style="font-size: small;">
+        <span style="margin-left: 50px; text-decoration: underline;"><strong>หมายเหตุ</strong></span>
+        <span>นักเรียนต้องดำเนินเอกสารก่อนออกจากหอพักล่วงหน้า 1 วันเท่านั้น</span>
+    </p>
+
+    <p align="center">........................................................................................................................................................................</p>
+
+    <p align="center" style="font-size: small;"><strong>เซ็นกลับเข้าหอพัก</strong></p>
+
+    <p style="font-size: small;">
+        <span style="margin-left: 50px;">ชื่อ(นักเรียน)................................................................ วันที่............................... เวลา................. ลายเซ็น............................................</span> <br>
+    </p>
+    <p style="font-size: small">
+        <span style="margin-left: 50px;">ชื่อ(ผู้ปกครอง)................................................................ เบอร์โทรศัพท์....................................... ลายเซ็น............................................</span>
+    </p>
+
+    </div>
+
+    <script type="text/javascript">
+        document.getElementById("check_self").checked = true;
+        setTimeout(() =>{
+            document.getElementById("load").style.visibility = "visible";
+            window.print();
+        },1000)
+
+        function afterprint(){
+            document.getElementById("load").style.visibility = "hidden";
+            window.location.reload();
+        }
+        window.onafterprint = afterprint;
+    </script>
+</body>
+</html>
